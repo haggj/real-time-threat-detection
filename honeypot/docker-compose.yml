@@ -1,0 +1,13 @@
+---
+version: '3'
+
+volumes:
+  cowrie-log:
+
+services:
+  cowrie:
+    image: cowrie/cowrie
+    ports:
+      - "2223:2222"
+    volumes:
+      - ~/Uni/Security/project/honeypot/log:/cowrie/cowrie-git/var/log/cowrie
