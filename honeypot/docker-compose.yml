@@ -10,4 +10,8 @@ services:
     ports:
       - "2223:2222"
     volumes:
-      - ./log:/cowrie/cowrie-git/var/log/cowrie
+      - ./cowrie.cfg:/cowrie/cowrie-git/etc/cowrie.cfg
+      - ./userdb.txt:/cowrie/cowrie-git/etc/userdb.txt
+      - ./log/cowrie.json:/cowrie/cowrie-git/var/log/cowrie/cowrie.json
+      - ./tty:/cowrie/cowrie-git/var/lib/cowrie/tty
+      - ./downloads:/cowrie/cowrie-git/var/lib/cowrie/downloads/
