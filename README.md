@@ -1,6 +1,13 @@
-# ru-sec-project
-Reykjavik University Security course (Spring 2023). This repo contains the final project of the course.
+# Security Project
+Reykjavik University Security course (Spring 2023). 
+This repo contains the final project of the course.
+It consists of the following components:
 
-to run Application server:
-pip3 install flask
-sudo python3 application_server.py (sudo python3 -E application_server.py)
+## Honeypot
+Cowrie honeypot that monitors live attacks and produces logs.
+
+## Application server
+A simple flask server which stores information about all incoming connections.
+
+## RTTD
+A python script which parses the honeypot logs and configures the firewall of the operating system accordingly.
