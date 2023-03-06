@@ -4,8 +4,9 @@ from datetime import datetime
 
 app = Flask(__name__)
 
-@app.route('/')
-def index():
+@app.route('/', defaults={'path': ''})
+@app.route('/<path:path>')
+def index(path):
     client_ip = request.environ.get('HTTP_X_REAL_IP', request.remote_addr)
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     with open("client_ips.txt", "a") as f:
@@ -30,5 +31,5 @@ def index():
     return render_template('index.html', unique_ips=unique_ips, unique_count=unique_count, all_ips=all_ips, all_count=all_count)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=80)
+    app.run(host='0.0.0.0', port=80, debug=False)
 
