@@ -31,13 +31,13 @@ def get_unqiue_ips():
 
     data = '\n'.join([f"{ip}\t{ips[ip]}" for ip in ips])
     res = f"""
-    ----------
-    Unique IPs
-    ----------
-    {data}
-    
-    Unique IPs: {len(ips)}
-    Total connections: {total_connections}
+----------
+Unique IPs
+----------
+{data}
+
+Unique IPs: {len(ips)}
+Total connections: {total_connections}
     """
     return res.encode()
 
