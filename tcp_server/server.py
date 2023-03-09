@@ -1,3 +1,5 @@
+import fcntl
+import os
 import socket
 import threading
 import logging
@@ -39,22 +41,26 @@ def get_unqiue_ips():
     """
     return res.encode()
 
+
 def client(sock):
-    client_ip, client_port = sock.getpeername()
-    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    with open("client_ips", "a") as f:
-        f.write(f"{client_ip}\t{timestamp}\n")
+    try:
+        data = sock.recv(1024).decode().strip()
+        if data == "go":
+            sock.send(get_unqiue_ips())
+        sock.close()
+        return
 
-    data = sock.recv(1024).decode().strip()
-    if data == "go":
-        sock.send(get_unqiue_ips())
-    sock.shutdown(socket.SHUT_RDWR)
-    sock.close()
-
-
+    except socket.error as e:
+        client_ip, client_port = sock.getpeername()
+        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        with open("client_ips", "a") as f:
+            f.write(f"{client_ip}\t{timestamp}\n")
+        sock.shutdown(socket.SHUT_RDWR)
+        sock.close()
 
 while True:
     c, addr = server.accept()     # Establish connection with client.
+    fcntl.fcntl(c, fcntl.F_SETFL, os.O_NONBLOCK)
     logging.info(f"{str(addr)} has connected")
     t = threading.Thread(target=client,args=(c,))
     t.start()
