@@ -5,7 +5,7 @@
 be root user (sudo su)
 source wsgiServerEnv/bin/activate
 pip3 install gunicorn flask gevent
-gunicorn -k gevent --bind 0.0.0.0:80 wsgi:app
+gunicorn -k gevent --bind 0.0.0.0:80 wsgi:app --daemon
 http://164.90.232.157:80
 ```
 

@@ -12,13 +12,13 @@
             margin-top: 50px;
             margin-bottom: 30px;
         }
-        ul {
+        table, ul {
             margin: 0 auto;
             list-style: none;
             padding: 0;
             width: 80%;
         }
-        li {
+        tr, li {
             padding: 10px;
             margin-bottom: 10px;
             background-color: #f7f7f7;
@@ -103,19 +103,34 @@
         <div class="count">Number of unique IP addresses: {{ unique_count }}</div>
             <br>
             <ul>
-                {% for ip in unique_ips %}
-                <li>{{ ip }}</li>
+                {% for ip, count in unique_ips %}
+                <li>{{ ip }} - Total Request: {{ count }}</li>
                 {% endfor %}
             </ul>
         </div>
     <div id="all_ips">
         <div class="count">Total number of Requests: {{ all_count }}</div>
             <br>
-            <ul>
-                {% for ip, count in all_ips %}
-                <li>{{ ip }} - Total Request: {{ count }}</li>
+            <table>
+                <tr>
+                    <th>IP</th>
+                    <th>Timestamp</th>
+                    <th>Path</th>
+                    <th>Authorization Header</th>
+                    <th>JSON Body</th>
+                    <th>Form Body</th>
+                </tr>
+                {% for data in all_requests %}
+                    <tr>
+                        <td>{{ data[0] }}</td>
+                        <td>{{ data[1] }}</td>
+                        <td>{{ data[2] }}</td>
+                        <td>{{ data[3] }}</td>
+                        <td>{{ data[4] }}</td>
+                        <td>{{ data[5] }}</td>
+                    </tr>
                 {% endfor %}
-            </ul>
+            </table>
         </div>
     </div>
     <script>
