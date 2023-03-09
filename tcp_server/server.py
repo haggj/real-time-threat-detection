@@ -52,7 +52,7 @@ def client(sock):
     if data == "go":
         sock.send(get_unqiue_ips())
         sock.shutdown(socket.SHUT_RDWR)
-    if data == "raw":
+    elif data == "raw":
         sock.send(get_raw())
         sock.shutdown(socket.SHUT_RDWR)
     else:
