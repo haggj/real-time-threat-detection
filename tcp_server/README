@@ -1,0 +1,4 @@
+# TCP Server
+Simple TCP server which records incoming connections.
+To run the server in the background ([deatils]()):
+`nohup python3 server.py &`

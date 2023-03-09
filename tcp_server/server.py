@@ -17,6 +17,11 @@ server.listen(20)
 
 logging.info(f"listen on {HOST}:{PORT}")
 
+def get_raw():
+    with open("client_ips", "r") as f:
+        return f.read().encode()
+
+
 def get_unqiue_ips():
     ips = {}
     total_connections = 0
@@ -43,24 +48,24 @@ Total connections: {total_connections}
 
 
 def client(sock):
-    try:
-        data = sock.recv(1024).decode().strip()
-        if data == "go":
-            sock.send(get_unqiue_ips())
-        sock.close()
-        return
-
-    except socket.error as e:
+    data = sock.recv(1024).decode().strip()
+    if data == "go":
+        sock.send(get_unqiue_ips())
+        sock.shutdown(socket.SHUT_RDWR)
+    if data == "raw":
+        sock.send(get_raw())
+        sock.shutdown(socket.SHUT_RDWR)
+    else:
         client_ip, client_port = sock.getpeername()
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        data = data.encode()
         with open("client_ips", "a") as f:
-            f.write(f"{client_ip}\t{timestamp}\n")
-        sock.shutdown(socket.SHUT_RDWR)
-        sock.close()
+            f.write(f"{client_ip}\t{timestamp}\t{data}\n")
+
+    sock.close()
 
 while True:
     c, addr = server.accept()     # Establish connection with client.
-    fcntl.fcntl(c, fcntl.F_SETFL, os.O_NONBLOCK)
     logging.info(f"{str(addr)} has connected")
-    t = threading.Thread(target=client,args=(c,))
+    t = threading.Thread(target=client, args=(c,))
     t.start()
