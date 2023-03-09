@@ -37,7 +37,9 @@ def index(path):
     if auth_header:
         auth_header = '"' + request.headers.get("Authorization") + '"'
     body_data = request.get_json()
-    form_data = json.dumps(request.form)
+    form_data = None
+    if request.form:
+        form_data = json.dumps(request.form)
     path = '/' + path
     with open("client_ips.txt", "a") as f:
         f.write(f"{client_ip}\t{timestamp}\t{path}\t{auth_header}\t{body_data}\t{form_data}\n")
