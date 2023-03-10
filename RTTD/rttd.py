@@ -10,6 +10,11 @@ def load_honeypot_data():
     for line in open('/home/cowrie/cowrie/var/log/cowrie/cowrie.json', 'r'):
         data.append(json.loads(line))
 
+    # TODO we need to find yesterdays date, because a new file seems to be added for each day. 
+    for line in open('/home/cowrie/cowrie/var/log/cowrie/cowrie.json', 'r'):
+        data.append(json.loads(line))
+
+
     #print(data)
     # map containing ip as key and timestamp as value 
     ip_timestamps = {}
@@ -21,18 +26,12 @@ def load_honeypot_data():
     return ip_timestamps
 
 '''
-Python function to get all rules to create and all rules to delete
-
-    create: all incoming connections from the last 24 hours
-    delete: all the ones that has not been seen during the last 24 hours
-
+    Retrieves two lists, one containing ips to be added, one containing ips to be deleted from the firewall
 '''
-
-# returns two lists, one containing ips to be added, one containing ips to be deleted from the firewall
 def get_add_delete():
     ip_timestamps = load_honeypot_data()
-    to_be_added = []
-    to_be_deleted = []
+    to_be_added = set()
+    to_be_deleted = set()
     print(len(ip_timestamps))
     for k,v in ip_timestamps.items(): 
         ip = k
@@ -42,68 +41,59 @@ def get_add_delete():
         # checks if the ip has accessed the honeypot within the last 24 hours
         if now-timedelta(hours=24) <= datetime_object <= now: 
             print(f"{ip} should be added as a rule")
-            to_be_added.append(k)
+            to_be_added.add(k)
         else: 
             print(f"{ip} should be deleted as a rule")
-            to_be_deleted.append(k)
+            to_be_deleted.add(k)
     print(len(to_be_added))
     return to_be_added, to_be_deleted
 
-# Retrieves current firewall rules
+'''
+    Retrieves firewall rules currently active
+'''
 def get_firewall_rules():
     return ufw.get_rules()
 
-def delete(ips):
-    pass
-
-def add(ips):
-    pass
-
-def filter_rules(tbd): 
-    rules = get_firewall_rules() 
-    print(rules)
+'''
+    Retrieves the rules which should be deleted 
+'''
+def get_rules_tbd(tbd): 
+    active_rules = get_firewall_rules() 
+    print(active_rules)
     print(tbd)
 
-    to_be_deleted = []
-    # get rules to be deleted 
-    for number, rule in rules.items(): 
+    to_be_deleted = set()
+    # Find the numbers of the rules which needs to be deleted 
+    for number, rule in active_rules.items(): 
         if any(ip in rule for ip in tbd):
-            print("YES")
-            to_be_deleted.append(number)
-        #print(rule)
+            print("")
+            to_be_deleted.add(number)
 
-    # find all those rules in the rules from the firewall 
+    return to_be_deleted
 
-    # delete them 
-
-# Deletes firewall rules based on an input IP list 
+'''
+    Deletes firewall rules based on an input IP list.
+''' 
 def delete_rules(ips): 
-    #current_rules = get_firewall_rules()
-    '''
-        TODO not sure if this works, also not sure if this is how we want it to work if it is. 
-        Another way would be to delete all firewall rules, then add the new ones.
-        A third way would be to check the rules against the current rules in the firewall? 
-    '''
-    for ip in ips: 
-        ufw.delete(f"deny from {ip} to any port 22 comment '{ip}'")
+    rules = get_rules_tbd(ips)
+    for rule in rules: 
+        ufw.delete(rule)
 
-# Adds firewall rules based on an input IP list 
+'''
+    Adds firewall rules based on an input IP list. If they're already in the firewall, they won't be duplicated. 
+'''
 def add_rules(ips):
-    # ufw deny from {IP} to any {port} comment 'This is a comment'
-    '''
-        TODO: What if the rule is already in the firewall? 
-    '''
     for ip in ips: 
-        ufw.add(f"deny from {ip} to any comment '{ip}'")
+        ufw.add(f"deny from {ip} to any port 22")
 
-# Runs the script
+'''
+    Runs the script
+    TODO: The script should be run every 5-10 minutes or so! 
+'''
 def main(): 
     add, delete = get_add_delete() 
-
-   #print(get_firewall_rules())
-    delte_filtered = filter_rules(delete) 
-    #delete_rules(delete)
-    #add_rules(add)
+    delete_rules(delete) 
+    add_rules(add)
 
 if __name__=="__main__":
     main()
