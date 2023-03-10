@@ -1,13 +1,13 @@
 import json 
 from datetime import datetime, timedelta
-#import pyufw as ufw
+import pyufw as ufw
 
-ufw = ""
+#ufw = ""
 
 def load_honeypot_data():
     # Reading the honeypot data from the json file 
     data = []
-    for line in open("../honeypot/log/example_cowrie.json", 'r'):
+    for line in open('/home/cowrie/cowrie/var/log/cowrie/cowrie.json', 'r'):
         data.append(json.loads(line))
 
     #print(data)
@@ -33,7 +33,7 @@ def get_add_delete():
     ip_timestamps = load_honeypot_data()
     to_be_added = []
     to_be_deleted = []
-
+    print(len(ip_timestamps))
     for k,v in ip_timestamps.items(): 
         ip = k
         timestamp = v
@@ -46,11 +46,35 @@ def get_add_delete():
         else: 
             print(f"{ip} should be deleted as a rule")
             to_be_deleted.append(k)
+    print(len(to_be_added))
     return to_be_added, to_be_deleted
 
 # Retrieves current firewall rules
 def get_firewall_rules():
     return ufw.get_rules()
+
+def delete(ips):
+    pass
+
+def add(ips):
+    pass
+
+def filter_rules(tbd): 
+    rules = get_firewall_rules() 
+    print(rules)
+    print(tbd)
+
+    to_be_deleted = []
+    # get rules to be deleted 
+    for number, rule in rules.items(): 
+        if any(ip in rule for ip in tbd):
+            print("YES")
+            to_be_deleted.append(number)
+        #print(rule)
+
+    # find all those rules in the rules from the firewall 
+
+    # delete them 
 
 # Deletes firewall rules based on an input IP list 
 def delete_rules(ips): 
@@ -61,7 +85,7 @@ def delete_rules(ips):
         A third way would be to check the rules against the current rules in the firewall? 
     '''
     for ip in ips: 
-        ufw.delete(f"deny from {ip} to any comment '{ip}'")
+        ufw.delete(f"deny from {ip} to any port 22 comment '{ip}'")
 
 # Adds firewall rules based on an input IP list 
 def add_rules(ips):
@@ -76,6 +100,8 @@ def add_rules(ips):
 def main(): 
     add, delete = get_add_delete() 
 
+   #print(get_firewall_rules())
+    delte_filtered = filter_rules(delete) 
     #delete_rules(delete)
     #add_rules(add)
 
