@@ -73,7 +73,8 @@ def get_rules_tbd(tbd):
 
     # Find the rule numbers of the rules which needs to be deleted 
     for number, rule in active_rules.items(): 
-        if any(ip in rule for ip in tbd):
+        if any(ip in rule for ip in tbd if not '130.208.240.12'):
+            # todo: check if the ip is the university ip 
             to_be_deleted.add(number)
 
     before_length = len(tbd)
