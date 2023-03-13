@@ -1,4 +1,4 @@
 cowrie/
 /Application_Server/client_ips.txt
-/app/ru-sec-project/RTTD/rttd_logs.txt
-/app/ru-sec-project/RTTD/test_delete.txt
+/RTTD/rttd_logs.txt
+/RTTD/test_delete.txt

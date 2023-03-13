@@ -48,7 +48,7 @@ def log_event(ip, event, rule):
     '''
     timestamp = datetime.now()
     res = f"""{{"src_ip": "{ip}", "event": "{event}", "rule": "{rule}", "timestamp": "{timestamp}"}}\n"""
-    with open('rttd_logs.txt', 'a') as f:
+    with open('log/rttd_logs.txt', 'a') as f:
         f.write(res)
     f.close()
 
