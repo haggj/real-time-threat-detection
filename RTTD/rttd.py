@@ -23,13 +23,12 @@ def load_honeypot_data():
     # Dictionary containing IPs as keys and timestamps as values
     ip_timestamps = {}
 
-    for entry in data:
-        ip_timestamps[entry['src_ip']] = entry['timestamp']
+    for entry in data: ip_timestamps[entry['src_ip']] = entry['timestamp']
 
     return ip_timestamps
 
 '''
-    Retrieves the data of yesterday. 
+    Retrieves the date of yesterday. 
 '''
 def get_yesterday(frmt='%Y-%m-%d', string=True):
     yesterday = datetime.now() - timedelta(1)
@@ -79,7 +78,7 @@ def get_rules_tbd(tbd):
 
     before_length = len(tbd)
     after_length = len(to_be_deleted)
-    print(f"Out of {before_length} rules to delete, {after_length} are currently active")
+    print(f"Out of {before_length} rules to delete, {after_length} were currently active")
 
     return to_be_deleted
 
@@ -88,15 +87,13 @@ def get_rules_tbd(tbd):
 ''' 
 def delete_rules(ips): 
     rules = get_rules_tbd(ips)
-    for rule in rules: 
-        ufw.delete(rule)
+    for rule in rules: ufw.delete(rule)
 
 '''
     Adds firewall rules based on an input IP list. If they're already in the firewall, they won't be duplicated. 
 '''
 def add_rules(ips):
-    for ip in ips: 
-        ufw.add(f"deny from {ip} to any port 22")
+    for ip in ips: ufw.add(f"deny from {ip} to any port 22")
 
 '''
     Runs the script.
@@ -105,7 +102,7 @@ def add_rules(ips):
 def main(): 
     update_rules()
 
-    schedule.every(1).minutes.do(update_rules)
+    schedule.every(5).minutes.do(update_rules)
 
     while True: 
         schedule.run_pending()
