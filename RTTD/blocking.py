@@ -6,6 +6,8 @@ from watchdog.events import LoggingEventHandler, FileSystemEventHandler
 import pyufw as ufw
 import json
 from datetime import datetime, timedelta
+from collections import defaultdict
+import schedule
 
 '''
     Script that runs based on updates of the cowrie logs. 
@@ -13,6 +15,20 @@ from datetime import datetime, timedelta
 '''
 
 WHITELISTED_IPS = ['130.208.240.12', '85.220.40.135']
+
+cached_rules = defaultdict(list)
+
+def update_cached_rules():
+    '''
+        Updates the cached rules through retrieving the current firewall rules.
+    '''
+    rules = ufw.get_rules()
+
+    for number, rule in rules.items(): 
+        split = rule.split(" ")
+        cached_rules[split[2]].append(number)
+    
+    print("UPDATED CACHED RULES\n")
 
 class MyEventHandler(FileSystemEventHandler):
     '''
@@ -27,16 +43,13 @@ class MyEventHandler(FileSystemEventHandler):
         '''
             Whenever the cowrie.json file changes, we want to add the latest IP to the firewall.
         '''
-        #print(event.src_path, "modified.")
         start = time.time()
-    
-        ip = load_last_event(self.path) # grabs the ip
+        ip = load_last_event(self.path) # Grabs the IP
         print("IP", ip)
-        # check if ip already was blocked just now 
-        if ip != self.last_ip and ip != None and str(ip) not in WHITELISTED_IPS:
-            rules = add_rules(ip) # blocks the ip from ufw
-        if ip != None and ip not in WHITELISTED_IPS:
-            self.last_ip = ip
+
+        # Check IP against cached rules 
+        if cached_rules.get(ip) != None and ip not in WHITELISTED_IPS:
+            rules = add_rules(ip) # Blocks the ip from ufw
 
         end = time.time()
         print("Time elapsed:", end - start, "\n")
@@ -51,6 +64,12 @@ def log_event(ip, event, rule):
     with open('log/rttd_logs.txt', 'a') as f:
         f.write(res)
     f.close()
+
+def call_analyzer():
+    # add after rule 
+    #call_analyser
+    #logs everything 
+    pass
 
 def load_last_event(path):
     '''
@@ -70,7 +89,7 @@ def add_rules(ip):
     '''
         Adds firewall rules based on an input IP. If it's already in the firewall, it won't be duplicated. 
     '''
-    rules = [f"deny from {ip} to any port 80", f"deny from {ip} to any port 443" ]
+    rules = [f"deny from {ip} to any port 80", f"deny from {ip} to any port 443"]
     for rule in rules: 
         ufw.add(rule)
         print("ADD", rule)
@@ -86,9 +105,14 @@ if __name__ == "__main__":
     observer = Observer()
     observer.schedule(event_handler, path, recursive=True)
     observer.start()
+    schedule.every(1).minutes.do(update_cached_rules)
+
     try:
         while True:
+            schedule.run_pending()
             time.sleep(1)
+
+            # check time treshold, if reached a certain time then update cache 
     finally:
         observer.stop()
         observer.join()
