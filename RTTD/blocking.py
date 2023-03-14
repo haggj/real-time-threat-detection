@@ -2,7 +2,6 @@ import sys
 import time
 import logging
 from threading import Thread
-
 from watchdog.observers import Observer
 from watchdog.events import LoggingEventHandler, FileSystemEventHandler
 import pyufw as ufw
@@ -32,7 +31,7 @@ def update_cached_rules():
 
     for number, rule in rules.items(): 
         split = rule.split(" ")
-        cached_rules[split[2]].append(number)
+        cached_rules[split[2]] = number
 
     end = time.time()
     print("Time elapsed:", end - start)
@@ -50,30 +49,31 @@ class MyEventHandler(FileSystemEventHandler):
 
     def on_modified(self, event):
         '''
-            Whenever the cowrie.json file changes, we want to add the latest IP to the firewall.
+            Called whenever a file is modified.
         '''
-        print("--------------- NEW ACCESS --------------")
+        handle_new_event(self.path)
+        
+def handle_new_event(path):
+    print("--------------- NEW ACCESS --------------")
 
-        start = time.time()
-        ip = load_last_event(self.path) # Grabs the IP
-        print("IP", ip)
+    start = time.time()
+    ip = load_last_event(path) # Grabs the IP
+    print("IP", ip)
 
-        # Check IP against cached rules 
-        #print(cached_rules)
-        if ip and ip not in cached_rules and ip not in WHITELISTED_IPS:
-            print("ADD")
-            rules = add_rules(ip) # Blocks the ip from ufw
-            cached_rules[ip] = []
+    # Check IP against cached rules 
+    if ip and ip not in cached_rules and ip not in WHITELISTED_IPS:
+        rules = add_rules(ip) # Blocks the ip from ufw
+        cached_rules[ip] = []
 
-        end = time.time()
-        print("Time elapsed:", end - start)
-        print("-----------------------------------------\n")
+    end = time.time()
+    print("Time elapsed:", end - start)
+    print("-----------------------------------------\n")
+
 
 def log_event(ip, event, rule, ip_details):
     """
         Logs an event. 
     """
-    print("LOGS")
     data = {
         "timestamp": str(datetime.now()),
         "src_ip": ip,
@@ -84,6 +84,7 @@ def log_event(ip, event, rule, ip_details):
     with open('log/rttd_logs.txt', 'a') as f:
         f.write(json.dumps(data) + "\n")
     f.close()
+    print("Saved log\n")
 
 def load_last_event(path):
     '''
@@ -109,7 +110,7 @@ def add_rules(ip):
         rules = [f"deny from {ip} to any port 80", f"deny from {ip} to any port 443" ]
         for rule in rules:
             ufw.add(rule)
-            print("ADD", rule)
+            print("ADD", rule, "\n")
         ip_details = IpAnalyzer().run(ip)
         for rule in rules:
             log_event(ip, "ADD", rule, ip_details)
@@ -128,6 +129,7 @@ def cleanup():
     delete_rules(ips_to_be_deleted)
 
     end = time.time()
+    print(f"Deleted {len(ips_to_be_deleted)} rules")
     print("Time elapsed:", end - start)
     print("------------- CLEANED RULES -------------\n")
 
