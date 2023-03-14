@@ -1,11 +1,15 @@
 import sys
 import time
 import logging
+from threading import Thread
+
 from watchdog.observers import Observer
 from watchdog.events import LoggingEventHandler, FileSystemEventHandler
 import pyufw as ufw
 import json
 from datetime import datetime, timedelta
+
+from RTTD.ip_analyzer import IpAnalyzer
 
 '''
     Script that runs based on updates of the cowrie logs. 
@@ -42,14 +46,19 @@ class MyEventHandler(FileSystemEventHandler):
         print("Time elapsed:", end - start, "\n")
 
 
-def log_event(ip, event, rule):
-    '''
+def log_event(ip, event, rule, ip_details):
+    """
         Logs an event. 
-    '''
-    timestamp = datetime.now()
-    res = f"""{{"src_ip": "{ip}", "event": "{event}", "rule": "{rule}", "timestamp": "{timestamp}"}}\n"""
+    """
+    data = {
+        "timestamp": datetime.now(),
+        "src_ip": ip,
+        "event": event,
+        "rule": rule,
+        "ip_details": ip_details
+    }
     with open('log/rttd_logs.txt', 'a') as f:
-        f.write(res)
+        f.write(json.dumps(data))
     f.close()
 
 def load_last_event(path):
@@ -67,15 +76,21 @@ def load_last_event(path):
     return None
 
 def add_rules(ip):
-    '''
-        Adds firewall rules based on an input IP. If it's already in the firewall, it won't be duplicated. 
-    '''
-    rules = [f"deny from {ip} to any port 80", f"deny from {ip} to any port 443" ]
-    for rule in rules: 
-        ufw.add(rule)
-        print("ADD", rule)
-        log_event(ip, "ADD", rule)
-    return rules
+    """
+    Adds firewall rules based on an input IP and logs this event.
+    Additionally, this function calls the IpAnalyzer in order to gather detailed information.
+    This is run in a new thread to not influence the performance of RTTD.
+    """
+    def task(ip):
+        rules = [f"deny from {ip} to any port 80", f"deny from {ip} to any port 443" ]
+        ip_details = IpAnalyzer().run(ip)
+        for rule in rules:
+            ufw.add(rule)
+            print("ADD", rule)
+            log_event(ip, "ADD", rule, ip_details)
+
+    thread = Thread(target=task, args=(ip,))
+    thread.start()
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO,
