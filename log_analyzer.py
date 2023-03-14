@@ -110,29 +110,83 @@ class SSHAnalyzer(AbstractAnalyzer):
                 log_files.append(file)
         return log_files
 
-    def timestamps_per_ip(self) -> Dict[str, List[datetime]]:
-        data = dict()
-
-        log_files = self._log_files()
-        for log_file in log_files:
+    def _load_by_eventid(self, eventid):
+        """
+        Loads all events of the specified eventid during time frame.
+        """
+        for log_file in self._log_files():
             with open(log_file, "r") as f:
                 lines = f.readlines()
 
             for line in lines:
                 event = json.loads(line)
-                timestamp = parser.parse(event["timestamp"]).replace(tzinfo=None)
                 ip = event["src_ip"]
+                timestamp = parser.parse(event["timestamp"]).replace(tzinfo=None)
 
-                if event["eventid"] != "cowrie.session.connect":
+                if event["eventid"] != eventid:
                     continue
 
-                if timestamp > self.end or timestamp < self.start or ip in self.whitelisted_ips:
-                    continue
+                if ip not in self.whitelisted_ips and self.start <= timestamp <= self.end:
+                    yield event
+    def successful_logins(self):
+        """
+        Get the successful logins to the honeypot.
+        Returns a list of tuples. Each tuple contains the probed username/password combination.
+        """
+        events = self._load_by_eventid("cowrie.login.success")
+        for event in events:
+            yield event["username"], event["password"]
 
-                if ip in data:
-                    data[ip].append(timestamp)
-                else:
-                    data[ip] = [timestamp]
+    def failed_logins(self):
+        """
+        Get the failed logins to the honeypot.
+        Returns a list of tuples. Each tuple contains the probed username/password combination.
+        """
+        events = self._load_by_eventid("cowrie.login.failed")
+        for event in events:
+            yield event["username"], event["password"]
+
+    def downloads(self):
+        """
+        Get the downloads attempts of attackers.
+        Returns a list of tuples. Each tuple contains the URL and the SHASUM of the approached file.
+        """
+        events = self._load_by_eventid("cowrie.session.file_download")
+        for event in events:
+            yield event["url"], event["shasum"]
+
+    def commands_per_session(self):
+        """
+        Get the executed commands in the faked shell.
+        Returns a dict. Keys are the session ids. Values are the executed commands in this session.
+        """
+        events = self._load_by_eventid("cowrie.command.input")
+        sessions = dict()
+        print(sessions)
+        for event in events:
+            sess_id = event["session"]
+            if sess_id in sessions:
+                sessions[sess_id].append(event["input"])
+                print(sessions)
+            else:
+                sessions[sess_id] = [event["input"]]
+                print(sessions)
+
+        return sessions
+
+
+    def timestamps_per_ip(self) -> Dict[str, List[datetime]]:
+        data = dict()
+
+        events = self._load_by_eventid("cowrie.session.connect")
+        for event in events:
+            timestamp = parser.parse(event["timestamp"]).replace(tzinfo=None)
+            ip = event["src_ip"]
+
+            if ip in data:
+                data[ip].append(timestamp)
+            else:
+                data[ip] = [timestamp]
 
         return data
 
