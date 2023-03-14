@@ -45,8 +45,7 @@ class AbstractAnalyzer:
         """
         Returns a dictionary. Keys are the unique IPs. Values are lists containing the timestamps of
         when this IP connected to the service.
-        """
-        return {
+        {
             "1.2.3.4": [
                 datetime.strptime('08-03-2011', '%d-%m-%Y'),
                 datetime.strptime('07-03-2011', '%d-%m-%Y'),
@@ -60,6 +59,7 @@ class AbstractAnalyzer:
                 datetime.strptime('08-03-2011', '%d-%m-%Y'),
             ]
         }
+        """
         raise NotImplementedError()
 
 
