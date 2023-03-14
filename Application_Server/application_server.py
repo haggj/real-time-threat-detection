@@ -36,7 +36,7 @@ def index(path):
     auth_header = request.headers.get("Authorization")
     if auth_header:
         auth_header = '"' + request.headers.get("Authorization") + '"'
-    body_data = request.get_json(silent=True)   
+    body_data = request.get_json(silent=True)
     form_data = None
     if request.form:
         form_data = json.dumps(request.form)
