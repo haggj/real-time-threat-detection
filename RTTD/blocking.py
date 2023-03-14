@@ -17,7 +17,7 @@ from ip_analyzer import IpAnalyzer
     Blocks IP addresses, idea is to make it as much in real-time as possible.
 '''
 
-WHITELISTED_IPS = ['85.220.40.135']
+WHITELISTED_IPS = ['130.208.240.12', '85.220.40.135']
 
 cached_rules = defaultdict(list)
 
@@ -68,8 +68,6 @@ class MyEventHandler(FileSystemEventHandler):
         end = time.time()
         print("Time elapsed:", end - start)
         print("-----------------------------------------\n")
-
-
 
 def log_event(ip, event, rule, ip_details):
     """
