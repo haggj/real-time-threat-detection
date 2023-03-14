@@ -24,9 +24,9 @@ def load_honeypot_data(path):
 
     # Retrieves the honeypot data from yesterday
     yesterday = get_yesterday()
-    #yesterday_file_path = f'{path}.{yesterday}'
-    #for line in open(yesterday_file_path, 'r'):
-    #    data.append(json.loads(line))
+    yesterday_file_path = f'{path}.{yesterday}'
+    for line in open(yesterday_file_path, 'r'):
+        data.append(json.loads(line))
 
     # Dictionary containing IPs as keys and timestamps as values
     ip_timestamps = {}
@@ -50,7 +50,7 @@ def get_delete():
     '''
         Retrieves a list containing IPs to be deleted from the firewall. 
     '''
-    ip_timestamps = load_honeypot_data('/app/ru-sec-project/RTTD/test_delete.txt')
+    ip_timestamps = load_honeypot_data('/home/cowrie/cowrie/var/log/cowrie/cowrie.json')
     to_be_deleted = set()
 
     now = datetime.now()
