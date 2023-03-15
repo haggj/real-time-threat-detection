@@ -144,7 +144,7 @@ def load_honeypot_data(path):
         data.append(json.loads(line))
 
     # Retrieves the honeypot data from yesterday
-    yesterday = get_yesterday()
+    yesterday = get_date_of_yesterday()
     yesterday_file_path = f'{path}.{yesterday}'
     for line in open(yesterday_file_path, 'r'):
         data.append(json.loads(line))
@@ -157,7 +157,7 @@ def load_honeypot_data(path):
     return ip_timestamps
 
 
-def get_yesterday(frmt='%Y-%m-%d', string=True):
+def get_date_of_yesterday(frmt='%Y-%m-%d', string=True):
     '''
         Retrieves the date of yesterday. 
     '''
@@ -209,6 +209,16 @@ def delete_rules(rules):
         print("DELETE:", rule[2])
         log_event(rule[0], "DELETE", rule[2], {})
 
+def reset_firewall():
+    print("------------ RESET FIREWALL -------------")
+    ufw.reset()
+    ufw.enable() 
+    ufw.default(incoming='allow', outgoing='allow', routed='reject')
+    ufw.set_logging('low')
+    print(ufw.status())    
+    print("-----------------------------------------\n")
+
+
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO,
                         format='%(asctime)s - %(message)s',
@@ -222,8 +232,10 @@ if __name__ == "__main__":
     schedule.every(30).minutes.do(update_cached_rules)
     schedule.every(5).minutes.do(cleanup)
 
+    reset_firewall()
     cleanup()
     update_cached_rules()
+    
     try:
         while True:
             schedule.run_pending()
