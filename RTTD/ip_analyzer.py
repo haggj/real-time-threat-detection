@@ -108,8 +108,13 @@ class IpAnalyzer:
         if not api_key:
             raise Exception("Missing environment variable: IPHUB_KEY")
         res = requests.get(f"http://v2.api.iphub.info/ip/{ip}", headers={"X-Key": api_key})
-        residential = res.json().get("block") == 0
-        return "residential", residential
+        data = res.json()
+        res = {
+            "hostname": data.get("hostname"),
+            "isp": data.get("isp"),
+            "block":  data.get("block")
+        }
+        return "iphub", res
     
     def check_geo_location(self, ip: str):
         """
