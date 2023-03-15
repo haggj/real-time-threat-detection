@@ -5,7 +5,7 @@ Reykjavik University Security course (Spring 2023).
 
 ## Profiling attacking IPs: "Who is attacking?"
 - passive checks:
-    - known blocked IP? (https://github.com/firehol/blocklist-ipsets)
+    - blocklists? (https://github.com/firehol/blocklist-ipsets)
     - known TOR exit node? (https://www.dan.me.uk/tornodes) -> Umm... You can only fetch the data every 30 minutes - sorry.  It's pointless any faster as I only update every 30 minutes anyway.
 If you keep trying to download this list too often, you may get blocked from accessing it completely.
 (this is due to some people trying to download this list every minute!)
@@ -18,13 +18,23 @@ If you keep trying to download this list too often, you may get blocked from acc
 
 
 ## Analyzing honeypot data: "What does the attacker do?"
-- connection attempts geo-map
-- used passwords
-- executed commands (tty)
-- investigate downloaded files
+- hoeypot at 22:
+  - used passwords
+  - executed commands (tty)
+  - investigate downloaded files
+- webserver at 80:
+  - called paths
+  - credentials?
+  - form/json data
+- tcp server at 443:
+  - what data is sent to the tcp socket?
 
 ## Using honeypot data to secure network: "How to prevent attacks?"
-- use logs to configure firewall
+- use hoeypot logs to configure firewall
+  - protect ports 80 and 443
+  - as fast as possible
+  - delete rules if IP is not active anymore
+  - whitelist our IPs
 
 
 # Components

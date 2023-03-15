@@ -6,6 +6,15 @@ from datetime import datetime
 
 app = Flask(__name__)
 
+@app.route('/secretCallback0928340982', methods = ['POST'])
+def callback():
+    with open("js_callbacks", "a") as f:
+        client_ip = request.environ.get('HTTP_X_REAL_IP', request.remote_addr)
+        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        data = request.get_json(silent=True)
+        f.write(f"{client_ip}\t{timestamp}\t{data}\n")
+    return ""
+
 @app.route('/1234')
 def statistics():
     unique_ips = {}
