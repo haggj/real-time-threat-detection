@@ -17,8 +17,8 @@ import os
     Blocks IP addresses, idea is to make it as much in real-time as possible.
 '''
 
-#WHITELISTED_IPS = ['130.208.240.12', '85.220.40.135']
-WHITELISTED_IPS = []
+WHITELISTED_IPS = ['130.208.240.12', '85.220.40.135']
+#WHITELISTED_IPS = []
 cached_rules = defaultdict(list)
 
 def update_cached_rules():
@@ -180,7 +180,7 @@ def get_ips_last_24hours(ip_timestamps):
         datetime_object = datetime.strptime(timestamp, '%Y-%m-%dT%H:%M:%S.%fZ')
 
         # Checks if the IP has accessed the honeypot within the last 24 hours
-        if now-timedelta(minutes=1) <= datetime_object <= now: 
+        if now-timedelta(hours=24) <= datetime_object <= now: 
             pass
         else: 
             to_be_deleted.add(ip)
@@ -231,8 +231,8 @@ if __name__ == "__main__":
     observer.schedule(event_handler, path, recursive=True)
     observer.start()
     
-    schedule.every(30).minutes.do(update_cached_rules)
-    schedule.every(5).minutes.do(cleanup)
+    schedule.every(5).minutes.do(update_cached_rules)
+    schedule.every(10).minutes.do(cleanup)
 
     api_key = os.environ.get('IPHUB_KEY', None)
     if not api_key:
