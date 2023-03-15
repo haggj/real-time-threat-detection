@@ -71,12 +71,12 @@ def handle_new_event(path):
     print("-----------------------------------------\n")
 
 
-def log_event(ip, event, rule, ip_details):
+def log_event(ip, event, rule, ip_details, timestamp=datetime.now()):
     """
         Logs an event. 
     """
     data = {
-        "timestamp": str(datetime.now()),
+        "timestamp": str(timestamp),
         "src_ip": ip,
         "event": event,
         "rule": rule,
@@ -112,9 +112,10 @@ def add_rules(ip):
         for rule in rules:
             ufw.add(rule)
             print("ADD", rule, "\n")
+        timestamp = datetime.now()
         ip_details = IpAnalyzer().run(ip)
         for rule in rules:
-            log_event(ip, "ADD", rule, ip_details)
+            log_event(ip, "ADD", rule, ip_details, timestamp)
 
     thread = Thread(target=task, args=(ip,))
     thread.start()
