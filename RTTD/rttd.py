@@ -11,6 +11,7 @@ from collections import defaultdict
 import schedule
 from ip_analyzer import IpAnalyzer
 import os
+import yaml
 
 '''
     Script that runs based on updates of the cowrie logs. 
@@ -26,6 +27,8 @@ def update_cached_rules():
         Updates the cached rules through retrieving the current firewall rules.
     '''
     print("------------- CACHING RULES -------------")
+    print("timestamp:", datetime.now())
+
     start = time.time()
 
     rules = ufw.get_rules()
@@ -44,34 +47,42 @@ class MyEventHandler(FileSystemEventHandler):
         Handles events using Watchdog. 
     '''
 
-    def __init__(self, path):
+    def __init__(self):
         self.last_ip = ""
-        self.path = path
 
     def on_modified(self, event):
         '''
             Called whenever a file is modified.
         '''
-        handle_new_event(self.path)
-        
+        print("--------------- NEW MODIFICATION --------------")
+
+        print("File modified, timestamp:", datetime.now())
+        path =  event.src_path
+        print("path:", path)
+        if path == '/home/cowrie/cowrie/var/log/cowrie/cowrie.json':
+            handle_new_event(path)
+        else:
+            print("Ignored path:", path)
+        print("-----------------------------------------\n")
+
 def handle_new_event(path):
-    print("--------------- NEW ACCESS --------------")
 
     start = time.time()
     ip = load_last_event(path) # Grabs the IP
-    print("IP", ip)
+    print("Accessed IP: ", ip)
 
     # Check IP against cached rules 
     if ip and ip not in cached_rules and ip not in WHITELISTED_IPS:
         rules = add_rules(ip) # Blocks the ip from ufw
         cached_rules[ip] = []
-
+        print("Added to rules.")
+    else:
+        print("Already blocked.")
     end = time.time()
     print("Time elapsed:", end - start)
-    print("-----------------------------------------\n")
 
 
-def log_event(ip, event, rule, ip_details, timestamp=datetime.now()):
+def log_event(ip, event, rule, ip_details, timestamp):
     """
         Logs an event. 
     """
@@ -123,6 +134,7 @@ def add_rules(ip):
 
 def cleanup():
     print("---------------- CLEANUP ----------------")
+    print("timestamp:", datetime.now())
     start = time.time()
 
     ip_timestamps = load_honeypot_data('/home/cowrie/cowrie/var/log/cowrie/cowrie.json')
@@ -142,14 +154,18 @@ def load_honeypot_data(path):
     data = []
 
     # Retrieves the honeypot data from today
-    for line in open(path, 'r'):
-        data.append(json.loads(line))
+    with open(path, 'r') as f:
+        for line in f: 
+            data.append(yaml.safe_load(line))
 
     # Retrieves the honeypot data from yesterday
     yesterday = get_date_of_yesterday()
     yesterday_file_path = f'{path}.{yesterday}'
-    for line in open(yesterday_file_path, 'r'):
-        data.append(json.loads(line))
+    if os.path.isfile(yesterday_file_path):
+        print(f"{yesterday_file_path} exists.")
+        with open(yesterday_file_path, 'r') as f:
+            for line in f:
+                data.append(json.loads(line))
 
     # Dictionary containing IPs as keys and timestamps as values
     ip_timestamps = {}
@@ -209,7 +225,7 @@ def delete_rules(rules):
     for rule in rules: 
         ufw.delete(rule[2])
         print("DELETE:", rule[2])
-        log_event(rule[0], "DELETE", rule[2], {})
+        log_event(rule[0], "DELETE", rule[2], {}, datetime.now())
 
 def reset_firewall():
     print("------------ RESET FIREWALL -------------")
@@ -224,20 +240,24 @@ def reset_firewall():
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO,
                         format='%(asctime)s - %(message)s',
-                        datefmt='%Y-%m-%d %H:%M:%S')
-    path = sys.argv[1] if len(sys.argv) > 1 else '.'
-    event_handler = MyEventHandler(path)
+                        datefmt='%Y-%m-%d %H:%M:%S',
+                        filename="watchdog_log.txt")
+    #path = sys.argv[1] if len(sys.argv) > 1 else '/home/cowrie/cowrie/var/log/cowrie/'
+    path = '/home/cowrie/cowrie/var/log/cowrie/'
+
+    event_handler = MyEventHandler()
+    logging_handler = LoggingEventHandler()
     observer = Observer()
     observer.schedule(event_handler, path, recursive=True)
+    observer.schedule(logging_handler, path, recursive=True)
     observer.start()
-    
     schedule.every(5).minutes.do(update_cached_rules)
     schedule.every(10).minutes.do(cleanup)
 
     api_key = os.environ.get('IPHUB_KEY', None)
     if not api_key:
         raise Exception("Missing environment variable: IPHUB_KEY")
-    reset_firewall()
+    #reset_firewall()
     cleanup()
     update_cached_rules()
 
