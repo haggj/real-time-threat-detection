@@ -1,3 +1,8 @@
+from io import BytesIO
+
+import requests
+from PIL import Image
+
 from log_analyzer import HttpsAnalyzer, SSHAnalyzer, HttpAnalyzer
 
 import matplotlib.pyplot as plt
@@ -88,4 +93,28 @@ class ChartGenerator:
         plt.show()
         plt.clf()
 
-cg = ChartGenerator(False)
+# cg = ChartGenerator(False)
+
+
+class PieChart:
+    """
+    Template:
+    https://quickchart.io/chart-maker/edit/zm-a0c204c7-784e-40ff-9683-44a0c2e34f4c
+    API:
+    https://quickchart.io/chart/render/zm-a0c204c7-784e-40ff-9683-44a0c2e34f4c?data1=50,40,30&labels=a,b,c
+    """
+    @staticmethod
+    def render(label, data):
+        BASE = "https://quickchart.io/chart/render/zm-a0c204c7-784e-40ff-9683-44a0c2e34f4c"
+        params = {
+            "data": ",".join([str(val) for val in data]),
+            "labels": ",".join(label)
+        }
+        print(params)
+        response = requests.get(BASE, params)
+        print(response.request.url)
+        img = Image.open(BytesIO(response.content))
+        img.show()
+
+
+PieChart.render(["a","b"], [20,80])
