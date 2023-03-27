@@ -4,11 +4,12 @@ from typing import Dict, List
 
 from dateutil import parser
 
+from charts.chart_generator import PieChart, VerticalBarChart
 from logs.abstract_analyzer import AbstractAnalyzer
 
 
 class RTTDAnalyzer(AbstractAnalyzer):
-    log_file = "example_logs/rttd_logs.txt"
+    log_file = "productive_logs/rttd_phase2"
     def _load_events(self, eventid=None):
         with open(self.log_file, "r") as f:
             lines = f.readlines()

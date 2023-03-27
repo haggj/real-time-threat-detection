@@ -7,7 +7,7 @@ from logs.abstract_analyzer import AbstractAnalyzer
 
 
 class HttpsAnalyzer(AbstractAnalyzer):
-    log_file = "example_logs/https_logs"
+    log_file = "productive_logs/https_phase2"
     def timestamps_per_ip(self) -> Dict[str, List[datetime]]:
         data = dict()
 

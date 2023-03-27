@@ -4,8 +4,8 @@ from typing import List, Tuple, Dict
 
 class AbstractAnalyzer:
     def __init__(self):
-        self.start = datetime.strptime('10-03-2023', '%d-%m-%Y')
-        self.end = datetime.strptime('11-03-2024', '%d-%m-%Y')
+        self.start = datetime.strptime('21-03-2023', '%d-%m-%Y')
+        self.end = datetime.strptime('22-03-2023', '%d-%m-%Y')
         self.whitelisted_ips = ['130.208.240.12', '85.220.40.135', '129.187.205.52', '129.187.207.88']
 
     def total_connections(self) -> int:

@@ -9,7 +9,7 @@ from logs.abstract_analyzer import AbstractAnalyzer
 
 
 class SSHAnalyzer(AbstractAnalyzer):
-    log_folder = "example_logs/cowrie"
+    log_folder = "productive_logs/cowrie"
 
     def _log_files(self):
         """
