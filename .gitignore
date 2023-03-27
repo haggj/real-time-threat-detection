@@ -2,3 +2,9 @@ cowrie/
 /Application_Server/client_ips.txt
 /RTTD/rttd_logs.txt
 /RTTD/test_delete.txt
+cached_tor_exit
+level_1
+level_2
+__pycache__/
+js_callbacks
+.idea/
