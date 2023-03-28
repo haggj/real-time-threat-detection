@@ -23,6 +23,7 @@ class SSHAnalyzer(AbstractAnalyzer):
             file = f"{self.log_folder}/cowrie.json.{formatted_day}"
             if os.path.isfile(file):
                 log_files.append(file)
+        print(log_files)
         return log_files
 
     def _load_by_eventid(self, eventid):

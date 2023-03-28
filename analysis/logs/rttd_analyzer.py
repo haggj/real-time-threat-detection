@@ -9,7 +9,8 @@ from logs.abstract_analyzer import AbstractAnalyzer
 
 
 class RTTDAnalyzer(AbstractAnalyzer):
-    log_file = "productive_logs/rttd_phase2"
+    #log_file = "productive_logs/rttd_phase2"
+    log_file = "fix_rttd_logs.txt"
     def _load_events(self, eventid=None):
         with open(self.log_file, "r") as f:
             lines = f.readlines()
@@ -53,10 +54,34 @@ class RTTDAnalyzer(AbstractAnalyzer):
                 data[key] = data.setdefault(key, 0) + 1
         return data
 
+    def rule_additions(self):
+        data = dict()
+        days = (self.end - self.start).days
+        for event in self._load_events(eventid="ADD"):
+            ip = event["src_ip"]
+
+            if ip in data:
+                data[ip].append(event['timestamp'])
+            else:
+                data[ip] = [event['timestamp']]
+        return len(data), len(data)//days
+
+    def rule_deletions(self):
+        data = dict()
+        days = (self.end - self.start).days
+        for event in self._load_events(eventid="DELETE"):
+            ip = event["src_ip"]
+
+            if ip in data:
+                data[ip].append(event['timestamp'])
+            else:
+                data[ip] = [event['timestamp']]
+        return len(data), len(data)//days
+
     def timestamps_per_ip(self) -> Dict[str, List[datetime]]:
         data = dict()
 
-        events = self._load_events()
+        events = self._load_events(eventid="ADD")
         for event in events:
             timestamp = parser.parse(event["timestamp"]).replace(tzinfo=None)
             ip = event["src_ip"]
@@ -66,4 +91,5 @@ class RTTDAnalyzer(AbstractAnalyzer):
             else:
                 data[ip] = [timestamp]
 
+        #print(data)
         return data
