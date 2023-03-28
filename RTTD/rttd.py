@@ -33,6 +33,9 @@ def update_cached_rules():
 
     rules = ufw.get_rules()
 
+    cached_rules.clear()
+
+
     for number, rule in rules.items(): 
         split = rule.split(" ")
         cached_rules[split[2]] = number

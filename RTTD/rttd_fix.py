@@ -90,19 +90,23 @@ def fix(ip_details):
         # -> add to firewall rule, add to cache
         else: 
             print("ADDING", ip)
-            active_firewall_rules[ip] = event["timestamp"]
-            cached_rules[ip] = event["timestamp"]
-            seen_ips[ip] = event["timestamp"]
+            timestamp = event["timestamp"]
+            active_firewall_rules[ip] = timestamp
+            cached_rules[ip] = timestamp
+            seen_ips[ip] = timestamp
+
+            datetime_object = datetime.strptime(timestamp, '%Y-%m-%dT%H:%M:%S.%fZ')
+
             if ip in seen_ips_multiple:
-                seen_ips_multiple[ip].append(event["timestamp"])
+                seen_ips_multiple[ip].append(timestamp)
             else:
-                seen_ips_multiple[ip] = [event["timestamp"]]
+                seen_ips_multiple[ip] = [timestamp]
             if ip in ip_details:
                 details = ip_details[ip]
             else:
                 details = IpAnalyzer().run(ip)
 
-            log_event(ip, "ADD", event["timestamp"], details)
+            log_event(ip, "ADD", datetime_object, details)
             
         # if not seen within 24 hours 
         # -> Delete, remove from cache 

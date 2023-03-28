@@ -25480,3 +25480,1083 @@ Traceback (most recent call last):
   File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
     data = sock.recv(1024).decode().strip()
 UnicodeDecodeError: 'utf-8' codec can't decode byte 0x9a in position 11: invalid start byte
+INFO:root:('20.55.53.144', 41966) has connected
+Exception in thread Thread-2029 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xc9 in position 0: invalid continuation byte
+INFO:root:('94.102.51.9', 60300) has connected
+Exception in thread Thread-2030 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xee in position 4: invalid continuation byte
+INFO:root:('172.104.11.51', 59908) has connected
+Exception in thread Thread-2031 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0x85 in position 4: invalid start byte
+INFO:root:('176.58.108.246', 65025) has connected
+Exception in thread Thread-2032 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xfc in position 8: invalid start byte
+INFO:root:('176.58.108.246', 9705) has connected
+Exception in thread Thread-2033 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xfc in position 8: invalid start byte
+INFO:root:('45.56.105.214', 61000) has connected
+Exception in thread Thread-2034 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xc5 in position 13: invalid continuation byte
+INFO:root:('185.100.87.136', 47858) has connected
+Exception in thread Thread-2035 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0x92 in position 32: invalid start byte
+INFO:root:('185.100.87.136', 38158) has connected
+Exception in thread Thread-2036 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xba in position 8: invalid start byte
+INFO:root:('185.100.87.136', 54848) has connected
+Exception in thread Thread-2037 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0x98 in position 249: invalid start byte
+INFO:root:('185.100.87.136', 44638) has connected
+INFO:root:('80.66.76.59', 64825) has connected
+Exception in thread Thread-2039 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xe0 in position 5: invalid continuation byte
+INFO:root:('45.79.181.251', 47056) has connected
+Exception in thread Thread-2040 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0x85 in position 4: invalid start byte
+INFO:root:('198.199.106.111', 50572) has connected
+Exception in thread Thread-2041 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xf9 in position 11: invalid start byte
+INFO:root:('23.92.17.231', 61000) has connected
+Exception in thread Thread-2042 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xc5 in position 13: invalid continuation byte
+INFO:root:('18.117.176.224', 38064) has connected
+Exception in thread Thread-2043 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xea in position 4: invalid continuation byte
+INFO:root:('152.32.203.59', 32822) has connected
+Exception in thread Thread-2044 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xe6 in position 11: invalid continuation byte
+INFO:root:('152.32.203.59', 48060) has connected
+Exception in thread Thread-2045 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0x8e in position 15: invalid start byte
+INFO:root:('152.32.203.59', 34034) has connected
+INFO:root:('152.32.203.59', 40806) has connected
+INFO:root:('152.32.203.59', 41188) has connected
+INFO:root:('152.32.203.59', 41620) has connected
+INFO:root:('152.32.203.59', 41946) has connected
+Exception in thread Thread-2050 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xa5 in position 4: invalid start byte
+INFO:root:('152.32.203.59', 52456) has connected
+INFO:root:('152.32.203.59', 52858) has connected
+INFO:root:('152.32.203.59', 57590) has connected
+Exception in thread Thread-2053 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0x91 in position 0: invalid start byte
+INFO:root:('152.32.203.59', 35064) has connected
+Exception in thread Thread-2054 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+INFO:root:('172.104.11.51', 2342) has connected
+Exception in thread Thread-2055 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0x85 in position 4: invalid start byte
+INFO:root:('152.32.203.59', 53900) has connected
+INFO:root:('185.142.236.34', 60820) has connected
+Exception in thread Thread-2057 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xf4 in position 4: invalid continuation byte
+INFO:root:('185.142.236.34', 41062) has connected
+INFO:root:('172.105.129.234', 61000) has connected
+Exception in thread Thread-2059 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xc5 in position 13: invalid continuation byte
+INFO:root:('45.55.0.13', 40026) has connected
+Exception in thread Thread-2060 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xb1 in position 14: invalid start byte
+INFO:root:('107.170.227.29', 42754) has connected
+Exception in thread Thread-2061 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xf8 in position 12: invalid start byte
+INFO:root:('192.241.222.24', 35126) has connected
+Exception in thread Thread-2062 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0x8b in position 12: invalid start byte
+INFO:root:('169.228.66.212', 42464) has connected
+Exception in thread Thread-2063 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xdc in position 11: invalid continuation byte
+INFO:root:('198.199.111.75', 43046) has connected
+Exception in thread Thread-2064 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xf2 in position 11: invalid continuation byte
+INFO:root:('162.243.136.18', 59536) has connected
+Exception in thread Thread-2065 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xbb in position 13: invalid start byte
+INFO:root:('198.199.97.240', 51188) has connected
+Exception in thread Thread-2066 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xaf in position 11: invalid start byte
+INFO:root:('45.79.128.205', 59598) has connected
+Exception in thread Thread-2067 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0x85 in position 4: invalid start byte
+INFO:root:('192.42.116.214', 58083) has connected
+Exception in thread Thread-2068 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xf2 in position 12: invalid continuation byte
+INFO:root:('159.203.208.7', 45480) has connected
+Exception in thread Thread-2069 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xa6 in position 13: invalid start byte
+INFO:root:('45.79.181.104', 26014) has connected
+Exception in thread Thread-2070 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0x85 in position 4: invalid start byte
+INFO:root:('20.55.53.144', 37174) has connected
+INFO:root:('13.56.77.123', 58398) has connected
+Exception in thread Thread-2072 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xee in position 4: invalid continuation byte
+INFO:root:('170.187.166.174', 61000) has connected
+Exception in thread Thread-2073 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xc5 in position 13: invalid continuation byte
+INFO:root:('146.88.240.11', 60116) has connected
+Exception in thread Thread-2074 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xa0 in position 11: invalid start byte
+INFO:root:('172.104.51.254', 36836) has connected
+Exception in thread Thread-2075 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xfc in position 8: invalid start byte
+INFO:root:('172.104.51.254', 39764) has connected
+INFO:root:('172.104.51.254', 39772) has connected
+Exception in thread Thread-2077 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xfc in position 8: invalid start byte
+INFO:root:('172.104.51.254', 39782) has connected
+Exception in thread Thread-2078 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xfc in position 8: invalid start byte
+INFO:root:('172.104.51.254', 39784) has connected
+INFO:root:('172.104.51.254', 39790) has connected
+Exception in thread Thread-2080 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xfc in position 8: invalid start byte
+INFO:root:('172.105.128.11', 43868) has connected
+Exception in thread Thread-2081 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0x85 in position 4: invalid start byte
+INFO:root:('185.180.143.76', 33088) has connected
+Exception in thread Thread-2082 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0x9d in position 4: invalid start byte
+INFO:root:('185.180.143.76', 44046) has connected
+INFO:root:('185.180.143.76', 44688) has connected
+INFO:root:('185.180.143.76', 52650) has connected
+INFO:root:('185.180.143.76', 53126) has connected
+INFO:root:('185.180.143.76', 33850) has connected
+Exception in thread Thread-2087 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xdc in position 4: invalid continuation byte
+INFO:root:('185.180.143.76', 52718) has connected
+Exception in thread Thread-2088 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0x9a in position 4: invalid start byte
+INFO:root:('185.180.143.96', 51339) has connected
+Exception in thread Thread-2089 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0x80 in position 0: invalid start byte
+INFO:root:('185.180.143.76', 38778) has connected
+INFO:root:('185.180.143.76', 46300) has connected
+INFO:root:('107.170.229.17', 55964) has connected
+Exception in thread Thread-2092 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xe6 in position 13: invalid continuation byte
+INFO:root:('20.117.17.214', 64765) has connected
+Exception in thread Thread-2093 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xef in position 4: invalid continuation byte
+INFO:root:('45.79.128.205', 43672) has connected
+Exception in thread Thread-2094 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0x85 in position 4: invalid start byte
+INFO:root:('205.210.31.14', 56418) has connected
+Exception in thread Thread-2095 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xc5 in position 13: invalid continuation byte
+INFO:root:('64.225.78.30', 48256) has connected
+Exception in thread Thread-2096 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xca in position 13: invalid continuation byte
+INFO:root:('143.42.189.87', 61000) has connected
+Exception in thread Thread-2097 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xc5 in position 13: invalid continuation byte
+INFO:root:('152.89.196.54', 55468) has connected
+Exception in thread Thread-2098 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xea in position 4: invalid continuation byte
+INFO:root:('152.89.196.54', 55406) has connected
+Exception in thread Thread-2099 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xea in position 4: invalid continuation byte
+INFO:root:('154.209.125.52', 27142) has connected
+Exception in thread Thread-2100 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xfc in position 8: invalid start byte
+INFO:root:('152.89.196.54', 43936) has connected
+Exception in thread Thread-2101 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xea in position 4: invalid continuation byte
+INFO:root:('162.243.146.31', 57612) has connected
+Exception in thread Thread-2102 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xf7 in position 12: invalid start byte
+INFO:root:('152.89.196.54', 43238) has connected
+Exception in thread Thread-2103 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xea in position 4: invalid continuation byte
+INFO:root:('35.187.98.121', 33416) has connected
+Exception in thread Thread-2104 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xd7 in position 4: invalid continuation byte
+INFO:root:('192.241.204.4', 56808) has connected
+Exception in thread Thread-2105 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0x94 in position 11: invalid start byte
+INFO:root:('64.62.197.86', 43003) has connected
+Exception in thread Thread-2106 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xae in position 11: invalid start byte
+INFO:root:('152.89.196.54', 56504) has connected
+Exception in thread Thread-2107 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xea in position 4: invalid continuation byte
+INFO:root:('152.89.196.54', 44916) has connected
+Exception in thread Thread-2108 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xea in position 4: invalid continuation byte
+INFO:root:('152.89.196.54', 49314) has connected
+Exception in thread Thread-2109 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xea in position 4: invalid continuation byte
+INFO:root:('167.248.133.37', 49968) has connected
+Exception in thread Thread-2110 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+ConnectionResetError: [Errno 104] Connection reset by peer
+INFO:root:('167.248.133.37', 37150) has connected
+Exception in thread Thread-2111 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xee in position 4: invalid continuation byte
+INFO:root:('167.248.133.37', 45604) has connected
+INFO:root:('167.248.133.37', 36558) has connected
+Exception in thread Thread-2113 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+ConnectionResetError: [Errno 104] Connection reset by peer
+INFO:root:('167.248.133.37', 41198) has connected
+Exception in thread Thread-2114 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xaf in position 3: invalid start byte
+INFO:root:('167.248.133.37', 34916) has connected
+Exception in thread Thread-2115 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xaf in position 3: invalid start byte
+INFO:root:('192.155.90.220', 32072) has connected
+Exception in thread Thread-2116 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0x85 in position 4: invalid start byte
+INFO:root:('152.89.196.54', 41896) has connected
+Exception in thread Thread-2117 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xea in position 4: invalid continuation byte
+INFO:root:('80.66.76.59', 63947) has connected
+Exception in thread Thread-2118 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xe0 in position 5: invalid continuation byte
+INFO:root:('152.89.196.54', 37578) has connected
+Exception in thread Thread-2119 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xea in position 4: invalid continuation byte
+INFO:root:('159.223.129.59', 26289) has connected
+Exception in thread Thread-2120 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xd4 in position 11: invalid continuation byte
+INFO:root:('159.223.129.59', 26290) has connected
+INFO:root:('152.89.196.54', 48340) has connected
+Exception in thread Thread-2122 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xea in position 4: invalid continuation byte
+INFO:root:('152.89.196.54', 36224) has connected
+Exception in thread Thread-2123 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xea in position 4: invalid continuation byte
+INFO:root:('66.228.43.134', 61000) has connected
+Exception in thread Thread-2124 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xc5 in position 13: invalid continuation byte
+INFO:root:('152.89.196.54', 58692) has connected
+Exception in thread Thread-2125 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xea in position 4: invalid continuation byte
+INFO:root:('152.89.196.54', 41656) has connected
+Exception in thread Thread-2126 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xea in position 4: invalid continuation byte
+INFO:root:('66.115.189.137', 29861) has connected
+Exception in thread Thread-2127 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xfc in position 8: invalid start byte
+INFO:root:('152.89.196.54', 56978) has connected
+Exception in thread Thread-2128 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xea in position 4: invalid continuation byte
+INFO:root:('152.89.196.54', 41264) has connected
+Exception in thread Thread-2129 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xea in position 4: invalid continuation byte
+INFO:root:('109.237.97.180', 60768) has connected
+INFO:root:('109.237.97.180', 60824) has connected
+Exception in thread Thread-2131 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0x9f in position 11: invalid start byte
+INFO:root:('172.105.128.11', 16340) has connected
+Exception in thread Thread-2132 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0x85 in position 4: invalid start byte
+INFO:root:('91.193.7.40', 41994) has connected
+INFO:root:('91.193.7.40', 39604) has connected
+Exception in thread Thread-2134 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0x83 in position 1: invalid start byte
+INFO:root:('91.193.7.40', 56154) has connected
+Exception in thread Thread-2135 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0x97 in position 4: invalid start byte
+INFO:root:('162.243.148.18', 56502) has connected
+INFO:root:('23.92.21.238', 61000) has connected
+Exception in thread Thread-2137 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xc5 in position 13: invalid continuation byte
+INFO:root:('91.193.7.40', 36102) has connected
+Exception in thread Thread-2138 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xb1 in position 11: invalid start byte
+INFO:root:('121.28.84.80', 8890) has connected
+Exception in thread Thread-2139 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xee in position 4: invalid continuation byte
+INFO:root:('121.28.84.80', 46946) has connected
+Exception in thread Thread-2140 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xee in position 4: invalid continuation byte
+INFO:root:('121.28.84.80', 7890) has connected
+INFO:root:('121.28.84.80', 19604) has connected
+Exception in thread Thread-2142 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xee in position 4: invalid continuation byte
+INFO:root:('121.28.84.80', 13241) has connected
+INFO:root:('121.28.84.80', 51784) has connected
+INFO:root:('121.28.84.80', 3470) has connected
+INFO:root:('20.117.17.214', 55074) has connected
+Exception in thread Thread-2146 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xef in position 4: invalid continuation byte
+INFO:root:('185.11.61.195', 48681) has connected
+Exception in thread Thread-2147 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xc5 in position 13: invalid continuation byte
+INFO:root:('45.79.172.21', 30262) has connected
+Exception in thread Thread-2148 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0x85 in position 4: invalid start byte
+INFO:root:('45.33.72.109', 61000) has connected
+Exception in thread Thread-2149 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xc5 in position 13: invalid continuation byte
+INFO:root:('194.55.224.203', 50730) has connected
+INFO:root:('91.193.7.40', 56978) has connected
+Exception in thread Thread-2151 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0x9a in position 0: invalid start byte
+INFO:root:('64.226.90.214', 52614) has connected
+Exception in thread Thread-2152 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0x8c in position 4: invalid start byte
+INFO:root:('45.79.181.179', 41140) has connected
+Exception in thread Thread-2153 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0x85 in position 4: invalid start byte
+INFO:root:('45.33.65.68', 61000) has connected
+Exception in thread Thread-2154 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xc5 in position 13: invalid continuation byte
+INFO:root:('130.208.240.12', 54696) has connected
+Exception in thread Thread-2155 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+ConnectionResetError: [Errno 104] Connection reset by peer
+INFO:root:('170.106.115.39', 43276) has connected
+Exception in thread Thread-2156 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xee in position 4: invalid continuation byte
+INFO:root:('170.106.115.39', 52504) has connected
+INFO:root:('170.106.115.39', 55114) has connected
+Exception in thread Thread-2158 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xe0 in position 5: invalid continuation byte
+INFO:root:('20.25.107.77', 50827) has connected
+Exception in thread Thread-2159 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xfc in position 8: invalid start byte
+INFO:root:('172.105.128.12', 53558) has connected
+Exception in thread Thread-2160 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0x85 in position 4: invalid start byte
+INFO:root:('193.118.53.210', 39970) has connected
+Exception in thread Thread-2161 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0x9d in position 4: invalid start byte
+INFO:root:('109.237.98.226', 35442) has connected
+INFO:root:('109.237.98.226', 35652) has connected
+Exception in thread Thread-2163 (client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ru-sec-project/tcp_server/server.py", line 51, in client
+    data = sock.recv(1024).decode().strip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0x92 in position 11: invalid start byte
