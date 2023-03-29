@@ -60,3 +60,15 @@ class AbstractAnalyzer:
         }
         """
         raise NotImplementedError()
+
+    def get_most_connecting_ip(self):
+        ip_dict = self.timestamps_per_ip()
+        # ip = max(ip_dict, key=ip_dict.get)
+        # return ip_dict[ip]
+        max_value = 0
+        max_key = 0
+        for ip in ip_dict:
+            if len(ip_dict[ip]) > max_value:
+                max_key = ip
+                max_value = len(ip_dict[ip])
+        return ip_dict[max_key]
