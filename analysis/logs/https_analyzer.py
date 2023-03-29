@@ -83,6 +83,8 @@ class HttpsAnalyzer(AbstractAnalyzer):
             else:
                 data[ip] = [timestamp]
 
-        # Add HTTPs connections
-        data.update(self.https_connections())
+
+        if self.__class__.__name__ == "HttpsAnalyzer":
+            # Add HTTPs connections
+            data.update(self.https_connections())
         return data
