@@ -9,7 +9,7 @@ The architecture is set up as shown in the image.
 
 ![alt text](architecture.png "Architecture")
 
-It consists of the following components:
+The repository consists of the following components:
 
 ## Honeypot (port 22)
 A Cowrie honeypot that monitors live attacks and produces logs. The honeypot is the most important information source of our RTTD. The logs of the honeypot are used to investigate the attackers and their behaviour. Moreover, the logs are used by the RTTD system to dynamically configure the firewall to secure the system.
@@ -18,8 +18,7 @@ A Cowrie honeypot that monitors live attacks and produces logs. The honeypot is 
 A simple flask server which stores information about all incoming connections. All connection events are logged. 
 
 ## TCP server (port 443)
-We developed a simple TCP server which is written in
-python. This server waits for incoming connections and logs the IP address along with the received data. The server does not respond to incoming connections. In contrast to the web server running on port 80, this server logs all connections attempts on TCP level instead of only logging successful HTTP requests.
+A simple TCP server. This server waits for incoming connections and logs the IP address along with the received data. The server does not respond to incoming connections. In contrast to the web server running on port 80, this server logs all connections attempts on TCP level instead of only logging successful HTTP requests.
 
 ## RTTD 
 A python script which parses the honeypot logs and configures the firewall of the operating system accordingly.
@@ -77,7 +76,7 @@ If you keep trying to download this list too often, you may get blocked from acc
   - what data is sent to the tcp socket?
 
 ## Using honeypot data to secure network: "How to prevent attacks?"
-- use hoeypot logs to configure firewall
+- User honeypot logs to configure firewall
   - protect ports 80 and 443
   - as fast as possible
   - delete rules if IP is not active anymore
