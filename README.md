@@ -49,3 +49,9 @@ A simple flask server which stores information about all incoming connections.
 
 ## RTTD
 A python script which parses the honeypot logs and configures the firewall of the operating system accordingly.
+
+The script consists of three main parts, run based on certain conditions, which can be seen below.
+- At a honeypot log file modification: Firewall Rule Additions (`on_modified(self, event)`)
+- Every 5 minutes: IP cache updates (`update_cached_rules()`)
+- Every 10 minutes: Firewall Rule Deletions (`cleanup()`)
+

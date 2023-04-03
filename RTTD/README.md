@@ -1,5 +1,7 @@
 # Real-Time Threat Detection
 
+A python script which parses the honeypot logs and configures the firewall of the operating system accordingly.
+
 ## UFW commands
 
 #### Create rule for certain IP on certain PORT
