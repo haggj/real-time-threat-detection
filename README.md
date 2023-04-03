@@ -76,7 +76,7 @@ If you keep trying to download this list too often, you may get blocked from acc
   - what data is sent to the tcp socket?
 
 ## Using honeypot data to secure network: "How to prevent attacks?"
-- User honeypot logs to configure firewall
+- Uses honeypot logs to configure firewall
   - protect ports 80 and 443
   - as fast as possible
   - delete rules if IP is not active anymore
