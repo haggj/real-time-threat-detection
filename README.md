@@ -1,5 +1,6 @@
 # Final Computer Security Project
-Reykjavik University, T-742-CSDA Computer Security (Spring 2023). 
+Reykjavik University, T-742-CSDA Computer Security (Spring 2023).
+We developed a real-time thread detection system, which dynamically configures firewall rules based on the attackers observed at our honeypot.
 
 # Components
 This repo contains the code implementation of the final project.
